@@ -20,6 +20,7 @@ decoder_input_ids = tokenizer("Studies show that", return_tensors="pt").input_id
 # forward pass
 outputs = model(input_ids=input_ids, decoder_input_ids=decoder_input_ids)
 last_hidden_states = outputs.last_hidden_state
+print(last_hidden_states)
 
 """#parallelize ( device_map = None )
 device_map (Dict[int, list], optional, defaults to None) — A dictionary that maps attention modules to devices.
