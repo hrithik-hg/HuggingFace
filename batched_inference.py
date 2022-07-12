@@ -19,6 +19,7 @@ output_sequences = model.generate(
     do_sample=False,  # disable sampling to test if batching affects output
 )
 
+print("English to German translation of ['''The house is wonderful.''', '''I do not like to work in NYC.''' ]")
 print(tokenizer.batch_decode(output_sequences, skip_special_tokens=True))
 
 """Because T5 has been trained with the span-mask denoising objective, it can be used to predict the sentinel (masked-out) tokens during inference. The predicted tokens will then be placed between the sentinel tokens."""
