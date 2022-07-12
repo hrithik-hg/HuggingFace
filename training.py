@@ -21,7 +21,7 @@ labels = tokenizer("<extra_id_0> cute dog <extra_id_1> the <extra_id_2>", return
 
 # the forward function automatically creates the correct decoder_input_ids
 loss = model(input_ids=input_ids, labels=labels).loss
-loss.item()
+print("By doing unsupervised training the loss is:-",loss.item())
 
 """#Supervised Training
 
@@ -38,7 +38,7 @@ labels = tokenizer("Das Haus ist wunderbar.", return_tensors="pt").input_ids
 
 # the forward function automatically creates the correct decoder_input_ids
 loss = model(input_ids=input_ids, labels=labels).loss
-loss.item()
+print("By doing supervised training the loss is:-",loss.item())
 
 """However, the above example only presents one training example. In reality, deep learning models are trained in batches. As a result, we must pad/truncate instances to the same length. In encoder-decoder models, the max source length and max target length parameters set the maximum length of the input and output sequences, respectively (otherwise they are truncated). Depending on the work, they should be properly set."""
 
@@ -85,4 +85,4 @@ labels[labels == tokenizer.pad_token_id] = -100
 
 # forward pass
 loss = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels).loss
-loss.item()
+print("Loss by using two hyperparameters:-",loss.item()
