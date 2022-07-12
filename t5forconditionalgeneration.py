@@ -21,8 +21,8 @@ input_ids = tokenizer(
     "summarize: studies have shown that owning a dog is good for you", return_tensors="pt"
 ).input_ids  # Batch size 1
 outputs = model.generate(input_ids)
+print("Summary:-", end='')
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-# studies have shown that owning a dog is good for you.
 
 """#parallelize()"""
 
