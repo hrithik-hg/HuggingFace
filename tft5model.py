@@ -15,3 +15,4 @@ decoder_input_ids = tokenizer("Studies show that", return_tensors="tf").input_id
 # forward pass
 outputs = model(input_ids, decoder_input_ids=decoder_input_ids)
 last_hidden_states = outputs.last_hidden_state
+print("Output hidden state:-", last_hidden_states)
